@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -99,5 +99,26 @@ public class AStar
 		}
 
 		return length;
+	}
+}
+
+public class Node
+{
+	public int gridX { get; }
+	public int gridY { get; }
+	
+	public Vector2 worldPosition { get; }
+	
+	public bool walkable;
+	
+	public float gCost;
+	public float hCost;
+	public float fCost;
+	
+	public Node(int x, int y, Vector2 worldPos)
+	{
+		gridX = x;
+		gridY = y;
+		worldPosition = worldPos;
 	}
 }
